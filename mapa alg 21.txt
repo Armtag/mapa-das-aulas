@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <string.h>
+
+
+main (){
+	
+	
+	int i, vetorRA [8];
+	const char RA[]={"19332105"};
+	
+	printf("NUMERO DO RA SEM O TRACO!");
+	
+	for (i=0; i <8; i++){
+		vetorRA[i]= RA[i];
+		
+		
+	}
+	
+	i=0;
+	
+	while (i<8){
+		
+	
+		printf("\n %c", vetorRA[i]);
+		i++;
+		
+	}
+	
+	return 0;
+}
