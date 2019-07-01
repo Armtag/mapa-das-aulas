@@ -1,0 +1,123 @@
+#include <stdio.h>
+#include <string.h>
+#include<stdlib.h>
+#define LINHA 4
+#define COLUNA 6
+
+
+
+int matriz[LINHA][COLUNA];
+
+int preenchervendas(){//funcao preencher vendas
+	
+	float vendas;
+	int semana;
+	int dia;
+	
+	printf("Informe a semana da venda: ");
+	scanf("%d", &semana);
+	printf("Informe a dia da venda: ");
+	scanf("%d", &dia);
+	printf("Informe o valor da venda: ");
+	scanf("%f", &vendas);
+	
+	matriz[semana][dia] = vendas;
+}
+
+
+int exibirvendas(){// funcao exibir vendas
+	
+	
+	int i,j;
+	
+	for (i=1; i< 5; i++){
+		for (j=1; j < 7; j++){
+			
+			printf("\n O valor da venda na semana %d do dia %d e : %d reais \n", i, j, matriz[i][j]);
+		}
+	
+	
+}
+
+}
+
+
+
+int mediavendas(){// funcao media vendas
+	
+	float mediavendas = 0.0;
+	float totalvendas = 0.0;
+	int dias;
+	int i, j;
+	
+	 for (i=1; i< 5; i++){
+	 	for (j=1; j< 7; j++){
+	 	  
+		  mediavendas += matriz[i][j];
+		  		
+	 	  totalvendas = (mediavendas + matriz[i][j])/2;
+		 }
+	 }
+	 printf("\nMedia de vendas: %f\n",totalvendas);
+	
+}
+
+
+int main(){//corpo do programa com menu
+	
+	int i;
+	int opc = 0, num1 = 0, num2 = 0;
+	do{
+		
+	    for (i=0;i<80;i++) printf("*");
+		printf("\nMENU DE OPCOES\n");
+		printf("1- preencha as vendas\n");
+		printf("2- exibir vendas\n");
+		printf("3- media vendas\n");
+		printf("4- sair\n");
+	    for (i=0;i<80;i++) printf("*");
+	    printf("\nDigite a opcao desejada:");
+		scanf("%d", &opc);
+		
+		switch(opc){
+			
+			case 1:// case da opçao 1 - preencher vendas
+				system("cls");
+                preenchervendas();
+	            
+	            break;
+	            
+	            case 2:// case da opçao 2 - exibir  vendas
+	            	
+	            exibirvendas();
+			        	            	
+         break;      
+         case 3:// case da opçao 3 - media vendas
+         
+            system("cls");
+         	mediavendas();
+         	break;
+         	case 4:// case da opçao 4 -sair do programa
+         		
+            printf("Saindo do programa, obrigado e volte sempre!!");
+			
+			break;
+			
+			
+			case 5:// case da opçao 5 - opçao invalida
+				
+		    default:
+			printf("opcao invalida!");
+			break;
+
+}
+
+
+		}while(opc != 4);
+		return 0;		
+}
+
+
+
+
+
